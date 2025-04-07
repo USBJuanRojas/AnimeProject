@@ -70,8 +70,8 @@ public class AnimesService {
         AnimeEntity existingAnime = anime.get();
 
         existingAnime.setAnimeName(animeToUpdate.getAnimeName());
-        existingAnime.setAnimeMovieYear(animeToUpdate.getAnimeMovieYear());
-        existingAnime.setAnimeMovieCaps(animeToUpdate.getAnimeMovieCaps());
+        existingAnime.setAnimeYear(animeToUpdate.getAnimeYear());
+        existingAnime.setAnimeCaps(animeToUpdate.getAnimeCaps());
 
         animesRepository.save(existingAnime);
 

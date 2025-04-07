@@ -112,7 +112,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"anime_name\": \"To Be Hero X\",\n    \"anime_year\": \"2025\",\n    \"anime_caps\": 1\n}",
+					"raw": "{\n    \"animeName\": \"To Be Hero X\",\n    \"animeYear\": \"2025\",\n    \"animeCaps\": 1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -156,7 +156,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"anime_name\": \"To Be Hero X\",\n    \"anime_year\": \"2025\",\n    \"anime_caps\": 1\n}",
+					"raw": "{\n    \"animeName\": \"To Be Hero X\",\n    \"animeYear\": \"2025\",\n    \"animeCaps\": 1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
