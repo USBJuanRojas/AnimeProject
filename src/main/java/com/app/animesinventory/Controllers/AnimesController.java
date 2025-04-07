@@ -68,7 +68,7 @@ public class AnimesController {
     }
 
     @PostMapping
-    public ResponseEntity<?> insertCarsMovie(@Valid @RequestBody AnimeEntity animeEntity){
+    public ResponseEntity<?> insertAnime(@Valid @RequestBody AnimeEntity animeEntity){
         return animesService.addAnime(animeEntity);
     }
 

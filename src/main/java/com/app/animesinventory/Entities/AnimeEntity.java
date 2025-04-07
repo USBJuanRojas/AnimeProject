@@ -21,15 +21,15 @@ public class AnimeEntity {
     @Size(min = 3, max = 100, message = "Anime name must be between 3 and 100 characters")
     private String animeName;
 
-    @JsonProperty("animeMovieYear")
+    @JsonProperty("animeYear")
     @NotBlank(message = "Year is required")
     @Pattern(regexp = "^(19|20)\\d{2}$", message = "Year must be a valid 4-digit number (1900-2099)")
-    private String animeMovieYear;
+    private String animeYear;
 
-    @JsonProperty("animeMovieCaps")
+    @JsonProperty("animeCaps")
     @NotNull(message = "Caps are required")
     @Min(value = 1, message = "Caps must be at least 1")
-    private Integer animeMovieCaps;
+    private Integer animeCaps;
 
     @PrePersist
     public void generateUUID(){
@@ -43,8 +43,8 @@ public class AnimeEntity {
         return "AnimeEntity{" +
                 "id=" + id +
                 ", animeName='" + animeName + '\'' +
-                ", animeMovieYear='" + animeMovieYear + '\'' +
-                ", animeMovieCaps=" + animeMovieCaps +
+                ", animeYear='" + animeYear + '\'' +
+                ", animeCaps=" + animeCaps +
                 '}';
     }
 
@@ -60,19 +60,19 @@ public class AnimeEntity {
         this.animeName = animeName;
     }
 
-    public String getAnimeMovieYear() {
-        return animeMovieYear;
+    public String getAnimeYear() {
+        return animeYear;
     }
 
-    public void setAnimeMovieYear(String animeMovieYear) {
-        this.animeMovieYear = animeMovieYear;
+    public void setAnimeYear(String animeYear) {
+        this.animeYear = animeYear;
     }
 
-    public Integer getAnimeMovieCaps() {
-        return animeMovieCaps;
+    public Integer getAnimeCaps() {
+        return animeCaps;
     }
 
-    public void setAnimeMovieCaps(Integer animeMovieCaps) {
-        this.animeMovieCaps = animeMovieCaps;
+    public void setAnimeCaps(Integer animeCaps) {
+        this.animeCaps = animeCaps;
     }
 }
