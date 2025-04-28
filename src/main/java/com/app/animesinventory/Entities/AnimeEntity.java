@@ -4,17 +4,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.*;
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.util.UUID;
 
 @Entity
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class AnimeEntity {
+
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
     @JsonProperty("id")
-    private UUID id;
+    private String id;
 
     @JsonProperty("animeName")
     @NotBlank(message = "Anime name is required")
@@ -32,47 +33,9 @@ public class AnimeEntity {
     private Integer animeCaps;
 
     @PrePersist
-    public void generateUUID(){
-        if (id == null){
-            id = UUID.randomUUID();
+    public void prePersist() {
+        if (this.id == null || this.id.isEmpty()) {
+            this.id = UUID.randomUUID().toString();
         }
-    }
-
-    @Override
-    public String toString() {
-        return "AnimeEntity{" +
-                "id=" + id +
-                ", animeName='" + animeName + '\'' +
-                ", animeYear='" + animeYear + '\'' +
-                ", animeCaps=" + animeCaps +
-                '}';
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getAnimeName() {
-        return animeName;
-    }
-
-    public void setAnimeName(String animeName) {
-        this.animeName = animeName;
-    }
-
-    public String getAnimeYear() {
-        return animeYear;
-    }
-
-    public void setAnimeYear(String animeYear) {
-        this.animeYear = animeYear;
-    }
-
-    public Integer getAnimeCaps() {
-        return animeCaps;
-    }
-
-    public void setAnimeCaps(Integer animeCaps) {
-        this.animeCaps = animeCaps;
     }
 }
