@@ -54,7 +54,9 @@ public class AnimesController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getAnime(@PathVariable UUID id) {return animesService.getAnimeById(id);}
+    public ResponseEntity<?> getAnime(@PathVariable UUID id) {
+        return animesService.getAnimeById(id);
+    }
 
     @GetMapping("/search")
     public ResponseEntity<?> getAnimesByName(
@@ -69,6 +71,7 @@ public class AnimesController {
 
     @PostMapping
     public ResponseEntity<?> insertAnime(@Valid @RequestBody AnimeEntity animeEntity){
+        System.out.println("todo bien");
         return animesService.addAnime(animeEntity);
     }
 
