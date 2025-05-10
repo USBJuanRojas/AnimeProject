@@ -54,9 +54,9 @@ public class AnimesController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getAnime(@PathVariable String id) {
-        UUID uuid = UUID.fromString(id);
-        return animesService.getAnimeById(id);}
+    public ResponseEntity<?> getAnime(@PathVariable UUID id) {
+        return animesService.getAnimeById(id);
+    }
 
     @GetMapping("/search")
     public ResponseEntity<?> getAnimesByName(
@@ -76,14 +76,12 @@ public class AnimesController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateAnime(@PathVariable String id, @Valid @RequestBody AnimeEntity animeEntity){
-        UUID uuid = UUID.fromString(id);
+    public ResponseEntity<?> updateAnime(@PathVariable UUID id, @Valid @RequestBody AnimeEntity animeEntity){
         return animesService.updateAnime(id, animeEntity);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteAnime(@PathVariable String id){
-        UUID uuid = UUID.fromString(id);
+    public ResponseEntity<?> deleteAnime(@PathVariable UUID id){
         return animesService.deleteAnime(id);
     }
 }

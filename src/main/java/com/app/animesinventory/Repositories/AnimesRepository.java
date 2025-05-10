@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface AnimesRepository extends JpaRepository<AnimeEntity, String> {
+public interface AnimesRepository extends JpaRepository<AnimeEntity, UUID> {
     Page<AnimeEntity> findAllByAnimeNameContaining(String animeName, Pageable pageable);
 
     @Override
